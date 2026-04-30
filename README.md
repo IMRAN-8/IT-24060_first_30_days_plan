@@ -1,78 +1,75 @@
-# IT-24060_first_30_days_plan
+# Example-1
+```java
+import java.util.LinkedList;
 
-## Overview
-This repository documents a 30-day learning plan focused on IT fundamentals and programming concepts. Each day contains a topic, resources, and example code.
+ class TaskManager {
+    private LinkedList <String> tasks;
+    public TaskManager(){
+        tasks= new LinkedList<>();
+    }
 
-## Start Date
-21-04-2026
+    public void addTask(String task)
+    {
+        tasks.add(task);
+    }
+    public void completeTask(){
+        if(!tasks.isEmpty()){
+            String completedTask=tasks.removeFirst();
+            System.out.println("Completed Task: "+completedTask);
+        }else{
+            System.out.println("No tasks to complete");
+        }
+    }
+    public void displayTasks()
+    {
+    System.out.println("Current Tasks: ");
+        for(String task: tasks)
+        {
+            System.out.println(task);
+        }
+    }
 
----
 
-## Day 01
-**Topic:** Creating Class & Object
+}
+public class Example1 {
+public static  void main(String[] args){
+    TaskManager manager=new TaskManager();
+    manager.addTask("Finish report");
+    manager.addTask("Email client");
+    manager.displayTasks();
+}
+}
+```
+# Example-2
+```java
+import java.io.*;
 
-**Video:**
-https://youtu.be/IWFzm8qlR1c?si=H5U8v8RDIWxkBxzG
+public class Example2 {
+    public static void main(String[] args){
+        try{
+            FileWriter writer=new FileWriter("output.txt");
+            BufferedWriter bufferedWriter= new BufferedWriter(writer);
+            bufferedWriter.write("Hello, World!");
+            bufferedWriter.newLine();;
+            bufferedWriter.write("This is a Java file handling example");
+            bufferedWriter.close();
+            System.out.println("Data written to file successfully.");
+        }catch(IOException e){
+            System.out.println("An error occured: "+e.getMessage());
+        }
 
-**Code:**
-https://github.com/IMRAN-8/IT-24060_first_30_days_plan/tree/main/Day%201
-
-**Summary:**
-- Definition of class and object
-- Syntax and structure
-- Creating objects from class
-- Basic examples
-
----
-
-## Day 02 (22-04-2026)
-**Topic:** Modifier & Encapsulation in Java
-
-**Video:** https://youtu.be/IWFzm8qlR1c?si=H5U8v8RDIWxkBxzG
-https://youtu.be/HZUUYnIZO_0?si=muTWbNSVXMumJNCf
-
-**Code:** https://github.com/IMRAN-8/IT-24060_first_30_days_plan/tree/main/Day%202
-
-**Summary:**
-
-- Access modifiers: public, private, protected, default
-- Scope and visibility rules
-- Concept of encapsulation
-- Data hiding using private variables
-- Getter and setter methods
-  
----
-
-## Day 03 (23-04-2026)
-**Topic:** Constructor in Java
-
-**Video:** https://youtu.be/acfR5vRTZvc?si=MqKadnG8uppYrFpB
-
-**Code:** https://github.com/IMRAN-8/IT-24060_first_30_days_plan/tree/main/Day%203
-
-**Summary:**
-
-- Definition of constructor
-- Default vs parameterized constructor
-- Constructor overloading
-- Role in object initialization
-  
----
-
-## Day 04 (24-04-2026)
-**Topic:** Super Class, Subclass, Inheritance & Polymorphism
-
-**Video:** https://youtu.be/j_VA2Rp6jM0?si=7h6M2ZXkI7RR5Ifk
-https://youtu.be/bLke13zY4rg?si=jXipMVv9pdV8r7mc
-
-**Code:** https://github.com/IMRAN-8/IT-24060_first_30_days_plan/tree/main/Day%204
-
-Summary:
-
-- Superclass and subclass relationship
-- Inheritance types in Java
-- Method overriding
-- Runtime polymorphism
-- Use of super keyword
-
----
+        try {
+            FileReader reader = new FileReader("output.txt");
+            BufferedReader bufferedReader= new BufferedReader(reader);
+            String line;
+            while((line =bufferedReader.readLine())!=null)
+            {
+                System.out.println(line);
+            }
+            bufferedReader.close();
+        }catch (IOException e){
+            System.out.println("An error occured: "+e.getMessage());
+        }
+    }
+}
+```
